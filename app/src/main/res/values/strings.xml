@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">BlueDating</string>
+    <string name="facebook_app_id">1940690156255706</string>
+    <string name="fb_login_protocol_scheme">fb1940690156255706</string>
+    <string name="nav_home">Home</string>
+    <string name="nav_room">Find Around</string>
+    <string name="nav_profile">Profile</string>
+    <string name="nav_notifications">Notifications</string>
+    <string name="nav_date">Date</string>
+    <string name="nav_settings">Settings</string>
+    <string name="nav_about_us">About Us</string>
+    <string name="menu_profile_view">view</string>
+    <string name="menu_profile_upload">upload an image</string>
+    <string name="menu_profile_take">take picture</string>
+</resources>
