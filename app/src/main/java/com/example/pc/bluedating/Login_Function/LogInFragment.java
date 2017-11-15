@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.example.pc.bluedating.R;
 import com.facebook.login.widget.LoginButton;
 
@@ -44,7 +45,7 @@ public class LogInFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_welcome_login,container,false);
 
         ImageView imageView = (ImageView)view.findViewById(R.id.image_login);
-        imageView.setImageResource(mResource_Img);
+        Glide.with(this).load(mResource_Img).fitCenter().into(imageView);
         LoginButton loginButton = (LoginButton)view.findViewById(R.id.button_login);
         listener.setUpLoginButton(loginButton);
         return view;

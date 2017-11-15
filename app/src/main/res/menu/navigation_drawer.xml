@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
 
+    <item android:title="Other">
+        <menu>
+            <item android:title="@string/nav_settings"
+                android:id="@+id/menu_nav_setting"
+                android:icon="@drawable/ic_setting"
+                ></item>
+            <item android:title="@string/nav_about_us"
+                android:id="@+id/menu_nav_about_us"
+                android:icon="@mipmap/ic_launcher"></item>
+
+
+        </menu>
+
+    </item>
     <group android:checkableBehavior="single">
     <item android:title="@string/nav_profile"
         android:icon="@drawable/ic_profile"
@@ -20,19 +36,4 @@
           android:icon="@drawable/ic_alarm"
           ></item>
     </group>
-
-    <item android:title="Other">
-        <menu>
-            <item android:title="@string/nav_settings"
-                android:id="@+id/menu_nav_setting"
-                android:icon="@drawable/ic_setting"
-                ></item>
-            <item android:title="@string/nav_about_us"
-                android:id="@+id/menu_nav_about_us"
-                android:icon="@mipmap/ic_launcher"></item>
-
-
-        </menu>
-
-    </item>
 </menu>

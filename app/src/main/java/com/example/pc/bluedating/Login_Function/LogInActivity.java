@@ -1,13 +1,11 @@
 package com.example.pc.bluedating.Login_Function;
 
 import android.Manifest;
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.net.Uri;
 import android.os.AsyncTask;
 import android.preference.PreferenceManager;
 import android.support.v4.app.ActivityCompat;
@@ -20,8 +18,9 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.example.pc.bluedating.DataObject.DataUserResolver;
 import com.example.pc.bluedating.MainScreen_Function.MainContentActivity;
-import com.example.pc.bluedating.Model.User;
+import com.example.pc.bluedating.Object.User;
 import com.example.pc.bluedating.R;
 import com.example.pc.bluedating.Utils.BitmapUtils;
 import com.example.pc.bluedating.Utils.BlueDatingApplication;
@@ -32,33 +31,24 @@ import com.facebook.FacebookException;
 import com.facebook.FacebookSdk;
 import com.facebook.GraphRequest;
 import com.facebook.GraphResponse;
-import com.facebook.Profile;
-import com.facebook.login.LoginFragment;
 import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
 import com.github.nkzawa.emitter.Emitter;
 import com.github.nkzawa.socketio.client.Socket;
 import com.google.gson.Gson;
-import com.google.gson.JsonParser;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-
-import static android.R.attr.id;
-import static com.example.pc.bluedating.Utils.BitmapUtils.getArrayFromString;
-import static com.facebook.Profile.getCurrentProfile;
 
 
 public class LogInActivity extends AppCompatActivity implements LogInFragment.LogInFragmentListener{
@@ -79,6 +69,7 @@ public class LogInActivity extends AppCompatActivity implements LogInFragment.Lo
         super.onCreate(savedInstanceState);
         FacebookSdk.sdkInitialize(getApplicationContext());
         setContentView(R.layout.activity_log_in);
+
         mSocket = BlueDatingApplication.getSocket();
         mSocket.connect();
 
@@ -106,14 +97,16 @@ public class LogInActivity extends AppCompatActivity implements LogInFragment.Lo
 
     // set up button in login fragment
     @Override
-    public void setUpLoginButton(LoginButton loginButton) {
+    public void setUpLoginButton(LoginButton loginButton)
+    {
         this.setUpLogInButton(loginButton);
     }
 
     @Override
-    protected void onPause() {
-        super.onPause();
+    protected void onDestroy() {
+        super.onDestroy();
         LoginManager.getInstance().logOut();
+
     }
 
     // create circular indicator
@@ -318,25 +311,18 @@ class GetUserTask extends AsyncTask<JSONObject,Void,User>
 
         Gson gson = new Gson();
         String myUser = gson.toJson(user);
-        mSocket.emit("register",myUser);
+        mSocket.emit("login",myUser);
 
 
     }
 }
-
-    void storeUser(String user)
-    {
-        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(LogInActivity.this);
-        SharedPreferences.Editor editor = preferences.edit();
-        editor.putString("user",user);
-        editor.commit();
-    }
 
     void moveToMainScreen()
     {
         Toast.makeText(getApplicationContext(),"dang nhap thanh cong",Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(LogInActivity.this, MainContentActivity.class);
         startActivity(intent);
+        finish();
     }
 
 
@@ -351,9 +337,7 @@ class GetUserTask extends AsyncTask<JSONObject,Void,User>
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        Gson gson = new Gson();
-                        String myUser = gson.toJson(mUser);
-                        storeUser(myUser);
+                        DataUserResolver.getInstance().saveUser(mUser);
                         moveToMainScreen();
                     }
                 });
@@ -378,9 +362,7 @@ class GetUserTask extends AsyncTask<JSONObject,Void,User>
                                     object.getString("birthday"),
                                     object.getString("email"),bytes);
 
-                            Gson gson = new Gson();
-                            String myUser = gson.toJson(mUser);
-                            storeUser(myUser);
+                            DataUserResolver.getInstance().saveUser(mUser);
                             moveToMainScreen();
                         }catch (JSONException e){
                             e.printStackTrace();

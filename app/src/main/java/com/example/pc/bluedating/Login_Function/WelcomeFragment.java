@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.bumptech.glide.Glide;
 import com.example.pc.bluedating.Utils.BitmapUtils;
 import com.example.pc.bluedating.R;
 
@@ -33,8 +34,10 @@ public class WelcomeFragment extends Fragment {
         ImageView imageView = (ImageView) view.findViewById(R.id.image_welcome);
 
 
-        Bitmap bitmap = BitmapUtils.decodeSampledBitmapFromResource(getActivity().getResources(),mResource_Img,imageView.getMaxWidth(),imageView.getMaxHeight());
-        imageView.setImageBitmap(bitmap);
+//        Bitmap bitmap = BitmapUtils.decodeSampledBitmapFromResource(getActivity().getResources(),mResource_Img,imageView.getMaxWidth(),imageView.getMaxHeight());
+//        imageView.setImageBitmap(bitmap);
+        Glide.with(this).load(mResource_Img).override(200,200).into(imageView);
+
 
         return view;
 

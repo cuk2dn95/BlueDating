@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:id="@+id/menu_view_profile_avatar"
-        android:title="@string/menu_profile_view"
-        />
-    <item android:id="@+id/menu_view_profile_upload"
+
+    <item android:id="@+id/menu_upload_profile_avatar"
         android:title="@string/menu_profile_upload"
         />
-    <item android:id="@+id/menu_view_profile_take"
+    <item android:id="@+id/menu_take_profile_avatar"
         android:title="@string/menu_profile_take"
         />
-
 </menu>

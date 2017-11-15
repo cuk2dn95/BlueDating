@@ -1,7 +1,5 @@
-package com.example.pc.bluedating.Model;
+package com.example.pc.bluedating.Object;
 
-
-import com.facebook.login.widget.LoginButton;
 
 /**
  * Created by PC on 10/23/2017.
@@ -18,6 +16,13 @@ public class User {
 
         this.email = email;
         this.avatar = avatar;
+    }
+
+
+    public User(String email, String name, String avatar64) {
+        this.email = email;
+        this.name = name;
+        this.avatar64 = avatar64;
     }
 
     public String getAvatar64() {

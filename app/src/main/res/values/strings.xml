@@ -2,6 +2,8 @@
     <string name="app_name">BlueDating</string>
     <string name="facebook_app_id">1940690156255706</string>
     <string name="fb_login_protocol_scheme">fb1940690156255706</string>
+
+    <!-- navigation drawer -->
     <string name="nav_home">Home</string>
     <string name="nav_room">Find Around</string>
     <string name="nav_profile">Profile</string>
@@ -12,4 +14,16 @@
     <string name="menu_profile_view">view</string>
     <string name="menu_profile_upload">upload an image</string>
     <string name="menu_profile_take">take picture</string>
+    <string name="open_drawer">open</string>
+    <string name="close_drawer">close</string>
+
+    <!-- profile -->
+    <string name="name">Name</string>
+    <string name="gender">Gender</string>
+    <string name="birthday">Birthday</string>
+    <string name="email">Email</string>
+    <string name="save_button">Save</string>
+    <string name="cancel_button">Cancel</string>
+
+
 </resources>

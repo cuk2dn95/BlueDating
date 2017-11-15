@@ -9,5 +9,23 @@
     <dimen name="profile_height">90dp</dimen>
     <dimen name="header_text_size">25sp</dimen>
     <dimen name="body_text_size">15sp</dimen>
+    <dimen name="title_text_size">20sp</dimen>
+    <dimen name="content_text_size">16sp</dimen>
+
+    <dimen name="margin_left">16dp</dimen>
+    <dimen name="margin_right">16dp</dimen>
+    <dimen name="margin_top">3dp</dimen>
+
+
+    <dimen name="margin_bottom">16dp</dimen>
+
+    <dimen name="width_button">88dp</dimen>
+    <dimen name="height_button">36dp</dimen>
+
+    <dimen name="width_avatar_chatting_item">50dp</dimen>
+    <dimen name="height_avatar_chatting_item">50dp</dimen>
+    <dimen name="margin_chatting_item">3dp</dimen>
+    <dimen name="name_chatting_item_size">28sp</dimen>
+    <dimen name="online_icon_size">20dp</dimen>
 
 </resources>

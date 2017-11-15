@@ -2,6 +2,7 @@ package com.example.pc.bluedating.Utils;
 
 import android.app.Application;
 
+import com.example.pc.bluedating.DataObject.DataUserResolver;
 import com.github.nkzawa.socketio.client.IO;
 import com.github.nkzawa.socketio.client.Socket;
 
@@ -14,6 +15,7 @@ import java.net.URISyntaxException;
 public class BlueDatingApplication extends Application {
 
     static  private Socket mSocket;
+    static BlueDatingApplication mInstance;
 
     static {
 
@@ -23,10 +25,27 @@ public class BlueDatingApplication extends Application {
             e.printStackTrace();
         }
     }
+    static public BlueDatingApplication getInstance()
+    {
+        return mInstance;
+    }
 
    static public Socket getSocket() {
         return mSocket;
     }
 
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        mInstance = this;
+    }
+
+    static  public void disconnect()
+    {
+        mSocket.disconnect();
+        mSocket.off("registered");
+        mSocket.off("existed");
+    }
 
 }
