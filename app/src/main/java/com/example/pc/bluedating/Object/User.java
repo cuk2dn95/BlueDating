@@ -1,6 +1,9 @@
 package com.example.pc.bluedating.Object;
 
 
+import com.example.pc.bluedating.Utils.BitmapUtils;
+import com.google.zxing.common.StringUtils;
+
 /**
  * Created by PC on 10/23/2017.
  */
@@ -8,6 +11,11 @@ package com.example.pc.bluedating.Object;
 public class User {
     String name,gender,birthday,email,avatar64;
     byte[] avatar;
+
+
+    public User() {
+        super();
+    }
 
     public User(String name, String gender, String birthday, String email, byte[] avatar) {
         this.name = name;
@@ -26,6 +34,9 @@ public class User {
     }
 
     public String getAvatar64() {
+        if(avatar64==null)
+            avatar64 = BitmapUtils.getStringFromArray(avatar);
+
         return avatar64;
     }
 

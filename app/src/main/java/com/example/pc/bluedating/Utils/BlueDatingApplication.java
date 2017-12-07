@@ -1,6 +1,7 @@
 package com.example.pc.bluedating.Utils;
 
 import android.app.Application;
+import android.widget.Toast;
 
 import com.example.pc.bluedating.DataObject.DataUserResolver;
 import com.github.nkzawa.socketio.client.IO;
@@ -17,10 +18,18 @@ public class BlueDatingApplication extends Application {
     static  private Socket mSocket;
     static BlueDatingApplication mInstance;
 
+
+
+
+
+
     static {
 
         try {
-            mSocket = IO.socket("http://192.168.182.1:3000");
+         // mSocket = IO.socket("http://192.168.56.1:3000");
+            mSocket = IO.socket("http://bluedating.herokuapp.com");
+
+
         } catch (URISyntaxException e) {
             e.printStackTrace();
         }

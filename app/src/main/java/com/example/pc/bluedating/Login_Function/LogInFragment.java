@@ -33,6 +33,9 @@ public class LogInFragment extends Fragment {
     {
         listener = (LogInFragmentListener) context;
     }
+    public void clearListener(){
+        listener = null;
+    };
 
     public void setResource_img(int resource_img) {
         this.mResource_Img = resource_img;

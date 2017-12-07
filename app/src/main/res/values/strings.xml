@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">BlueDating</string>
-    <string name="facebook_app_id">1940690156255706</string>
-    <string name="fb_login_protocol_scheme">fb1940690156255706</string>
+    <string name="facebook_app_id">329764144164230</string>
+    <string name="fb_login_protocol_scheme">fb329764144164230</string>
 
     <!-- navigation drawer -->
     <string name="nav_home">Home</string>
@@ -24,6 +24,8 @@
     <string name="email">Email</string>
     <string name="save_button">Save</string>
     <string name="cancel_button">Cancel</string>
+
+    <string name="hint_a_message">Type a message</string>
 
 
 </resources>

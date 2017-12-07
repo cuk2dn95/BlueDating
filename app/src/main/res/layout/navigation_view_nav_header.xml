@@ -10,7 +10,7 @@
         android:layout_height="match_parent"
         android:id="@+id/image_nav_header_background"
         android:scaleType="fitXY"
-        android:src="@mipmap/ic_launcher"
+        android:src="@drawable/notification_bg_login"
         />
 
     <LinearLayout

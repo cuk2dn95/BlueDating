@@ -36,7 +36,7 @@ public class WelcomeFragment extends Fragment {
 
 //        Bitmap bitmap = BitmapUtils.decodeSampledBitmapFromResource(getActivity().getResources(),mResource_Img,imageView.getMaxWidth(),imageView.getMaxHeight());
 //        imageView.setImageBitmap(bitmap);
-        Glide.with(this).load(mResource_Img).override(200,200).into(imageView);
+        Glide.with(this).load(mResource_Img).fitCenter().override(200,200).into(imageView);
 
 
         return view;

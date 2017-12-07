@@ -4,6 +4,6 @@
     <size android:height="@dimen/height_button"
     android:width="@dimen/width_button"
     />
-    <corners android:radius="2dp"></corners>
+    <corners android:radius="10dp"></corners>
     <solid android:color="@color/not_active_button"></solid>
 </shape>

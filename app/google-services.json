@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "141050823082",
+    "firebase_url": "https://blue-dating.firebaseio.com",
+    "project_id": "blue-dating",
+    "storage_bucket": "blue-dating.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:141050823082:android:6dc95cdf55196dd1",
+        "android_client_info": {
+          "package_name": "com.example.pc.bluedating"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "141050823082-enl9srn0l7ba1qfu36ch097iqobtgmic.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.pc.bluedating",
+            "certificate_hash": "bda41c78e17153ab12e36f688d898dffabfde705"
+          }
+        },
+        {
+          "client_id": "141050823082-h78av8t8k0cr24nutqf84i9021qjlghe.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCafDeXCQ4-lmLBOhmmwqbJ5GF_KL7_2Mo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "141050823082-h78av8t8k0cr24nutqf84i9021qjlghe.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,18 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v4.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+
+<com.daimajia.swipe.SwipeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/swipe_layout"
+    android:id="@+id/chatting_layout"
+    app:clickToClose="false"
+    android:clickable="false"
+
     >
 
-
-    <android.support.v7.widget.RecyclerView
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/chatting_recyclerView"
+
+        >
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <com.stfalcon.chatkit.messages.MessagesList
+            android:id="@+id/messagesList"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:incomingDefaultBubbleSelectedColor="@color/gray"
+            app:incomingDefaultImageOverlaySelectedColor="@color/gray_transparent"
+            app:incomingTextColor="@color/black"
+            app:incomingTextSize="18sp"
+            app:outcomingDefaultImageOverlaySelectedColor="@color/gray_transparent"
+            app:outcomingTextColor="@color/white"
+            app:outcomingTextSize="18sp"
+
+            />
+
+        <com.stfalcon.chatkit.messages.MessageInput
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:inputHint="@string/hint_a_message"
+            android:id="@+id/messagesInput"
+
+            />
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        >
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:id="@+id/swipe_layout_dialog"
         >
 
-    </android.support.v7.widget.RecyclerView>
+
+        <com.stfalcon.chatkit.dialogs.DialogsList
+            android:id="@+id/dialogsList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:dialogDividerLeftPadding="0dp"
+            app:dialogMessageTextSize="17sp"
+            app:dialogTitleTextStyle="bold"
+            app:dialogUnreadBubbleBackgroundColor="@color/red"
+            app:dialogUnreadItemBackground="@color/transparent"
+            app:dialogUnreadTitleTextStyle="bold"
+
+            />
+
+    </android.support.v4.widget.SwipeRefreshLayout>
+    </RelativeLayout>
 
 
-</android.support.v4.widget.SwipeRefreshLayout>
+
+
+
+
+
+
+</com.daimajia.swipe.SwipeLayout>

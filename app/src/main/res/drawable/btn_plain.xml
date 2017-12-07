@@ -7,5 +7,5 @@
     </size>
 
     <solid android:color="@color/plain_button"></solid>
-    <corners android:radius="2dp"></corners>
+    <corners android:radius="10dp"></corners>
 </shape>

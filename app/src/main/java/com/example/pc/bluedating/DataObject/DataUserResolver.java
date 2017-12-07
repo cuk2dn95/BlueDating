@@ -3,9 +3,7 @@ package com.example.pc.bluedating.DataObject;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.net.Uri;
-import android.preference.PreferenceManager;
 
-import com.example.pc.bluedating.Login_Function.LogInActivity;
 import com.example.pc.bluedating.Object.User;
 import com.example.pc.bluedating.Utils.BitmapUtils;
 import com.example.pc.bluedating.Utils.BlueDatingApplication;
@@ -13,11 +11,8 @@ import com.google.gson.Gson;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
-
-import static com.example.pc.bluedating.Utils.BitmapUtils.getBytes;
 
 /**
  * Created by PC on 11/1/2017.
@@ -29,6 +24,7 @@ public class DataUserResolver {
     private static SharedPreferences mSharedPreferences;
     private static DataUserResolver mUserResolver;
 
+
     public static DataUserResolver getInstance()
     {
         if (mUserResolver == null)
@@ -39,7 +35,16 @@ public class DataUserResolver {
     private DataUserResolver()
     {
         mSharedPreferences = BlueDatingApplication.getInstance().getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
+
     }
+
+
+    public void clear (){
+        SharedPreferences.Editor e = mSharedPreferences.edit();
+        e.clear();
+        e.commit();
+    }
+
 
 
     public  void saveUser(User user)

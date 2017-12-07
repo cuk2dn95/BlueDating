@@ -7,5 +7,6 @@
     <color name="not_active_button">#D1C4E9</color>
     <color name="plain_button">#F3E5F5</color>
     <color name="color_background_profile">#EDE7F6</color>
-
+    <color name="red">#ec092e</color>
+    <color name="gray_transparent">#efd7d4c2</color>
 </resources>
